@@ -1,0 +1,7 @@
+{
+  "name": "formulario",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

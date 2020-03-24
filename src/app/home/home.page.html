@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-toolbar color="danger">
+        <ion-title>
+            Lista de Contactos
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+    <ion-text>Agregar Contacto</ion-text>
+    <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input [(ngModel)]="service.nom" #nombre></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Telefono</ion-label>
+        <ion-input [(ngModel)]="service.t" #telefono></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input [(ngModel)]="service.c" #correo></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Notas</ion-label>
+        <ion-input [(ngModel)]="service.not" #notas></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Fecha de Nacimiento</ion-label>
+        <ion-datetime pickerFormat="DD-MM-YYYY" #fecha_nacimiento></ion-datetime>
+    </ion-item>
+    <ion-radio-group (ionChange)="service.event1($event)" value="h">
+        <ion-list-header>
+            <h4>Sexo</h4>
+        </ion-list-header>
+        <ion-item lines="none">
+            <ion-label>Hombre</ion-label>
+            <ion-radio slot="start" color="primary" value="h"></ion-radio>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-label>Mujer</ion-label>
+            <ion-radio slot="start" color="primary" value="m"></ion-radio>
+        </ion-item>
+    </ion-radio-group>
+    <div id="container">
+        <ion-button (click)="service.addPerson(nombre.value,telefono.value,correo.value,notas.value)" expand="full">
+            <ion-icon name="add-circle-outline"></ion-icon>
+        </ion-button>
+    </div>
+    <app-component></app-component>
+</ion-content>

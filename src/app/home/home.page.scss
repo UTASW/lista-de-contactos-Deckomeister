@@ -1,0 +1,34 @@
+#container {
+    left: 0;
+    right: 0;
+    margin: 0;
+}
+
+#container p {
+    color: #8c8c8c;
+}
+
+#container a {
+    text-decoration: none;
+}
+
+ion-content ion-toolbar {
+    --background: translucent;
+}
+
+ion-text {
+    font-size: 25px;
+    margin-left: 0.6em;
+}
+
+h1 {
+    margin-left: 0.6em;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.blue {
+    background-color: lightblue;
+}

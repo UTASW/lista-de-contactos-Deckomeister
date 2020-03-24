@@ -1,0 +1,26 @@
+<div *ngIf="service.arrPersonas.length !== 0">
+  <ion-text>Mis Contactos</ion-text>
+  <ion-card-content>
+      <ion-item>
+          Ver Notas
+          <ion-toggle color="primary" [(ngModel)]="service.pepperoni" slot="end"></ion-toggle>
+      </ion-item>
+  </ion-card-content>
+  <ion-card *ngFor="let persona of service.arrPersonas; let a = index" [ngClass]="{'pink':persona.strSexo=='m','blue':persona.strSexo=='h'}">
+      <ion-card-header>
+          <ion-card-title>Nombre: {{persona.strNombre}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+          Telefono: {{persona.intTelefono}} <br> Correo: {{persona.strCorreo}}
+      </ion-card-content>
+      <ion-item>
+          <h6 *ngIf="service.pepperoni">{{persona.strNotas}}</h6>
+          <ion-button slot="end" size="small" color="danger" (click)="service.presentAlertConfirm(a)">
+              <ion-icon name="close-outline"></ion-icon>
+          </ion-button>
+      </ion-item>
+  </ion-card>
+</div>
+<div *ngIf="service.arrPersonas.length === 0">
+  <h1>No se han agregado contactos.</h1>
+</div>
